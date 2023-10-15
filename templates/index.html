@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smoking Detection</title>
+</head>
+<body>
+    <h1>YOLOv5 Web Service</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <h2>Select Model:</h2>
+        <select name="model_choice">
+        {% for key in listOfKeys %}
+            <option value="{{key}}">{{key}}</option>
+        {% endfor %}
+        </select>
+
+        <h2>Select Image:</h2>
+        <input type="file" name="file" accept="image/*" ><br><br>
+
+        <h2>Select Detection Type:</h2>
+        <input type="radio" name="detect_choice" value="single" checked>Single Image<br>
+        <input type="radio" name="detect_choice" value="live">Live Detection<br>
+
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
